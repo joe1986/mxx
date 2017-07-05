@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cloud-web:war exploded">
+    <output-path>$PROJECT_DIR$/cloud-web/target/cloud-web</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cloud-web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-devtools:unknown" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:unknown" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-jasper:unknown" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:2.1.4" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/cloud-web/target/cloud-web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="cloud-web/web/Web" />
+    </root>
+  </artifact>
+</component>

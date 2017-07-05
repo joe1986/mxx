@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<nav class="navbar-default navbar-static-side" role="navigation" th:fragment="sideMenu">
+
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <!--登陆后个人管理菜单-->
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+								<span>
+	                       			 <img alt="image" class="img-circle" th:src="@{/common/img/profile_small.jpg}"/>
+	                         	</span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+									<span class="clear">
+											<span class="block m-t-xs"> <strong class="font-bold">周专书</strong></span>
+									<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+									</span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li>
+                            <a href="###">个人资料</a>
+                        </li>
+                        <li>
+                            <a href="###">修改密码</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="views/user/login.html">注&nbsp;&nbsp;&nbsp;销</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    马小修
+                </div>
+            </li>
+            <!--左侧导航菜单-->
+            <li class="active">
+                <a href="###"><i class="fa fa-home"></i> <span class="nav-label">主页</span> <span
+                        class="fa arrow"></span></a>
+            </li>
+
+            <li>
+                <a href="###"><i class="fa fa-user-circle"></i> <span class="nav-label">企业用户管理</span> <span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="partner/audit.html">信息审核</a>
+                    </li>
+                    <li>
+                        <a href="partner/read.html">信息查看</a>
+                    </li>
+                    <li>
+                        <a href="partner/operation.html">信息管理</a>
+                    </li>
+                </ul>
+            </li>
+            <!--备件管理-->
+            <li>
+                <a href="###"><i class="fa fa-desktop"></i> <span class="nav-label">备件</span> <span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">备件查看</a>
+                    </li>
+                    <li>
+                        <a href="###">备件管理</a>
+                    </li>
+
+                </ul>
+            </li>
+            <!--购物车管理-->
+            <li>
+                <a href="###"><i class="fa fa-shopping-cart"></i> <span class="nav-label">购物车管理</span><span
+                        class="fa arrow"></span></a>
+            </li>
+            <!--订单管理 购买，维修，回收订单-->
+            <li>
+                <a href="###"><i class="fa fa-list"></i> <span class="nav-label">购买订单</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">订单搜索</a>
+                    </li>
+                    <li>
+                        <a href="###">查看订单</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="###"><i class="fa fa-th-list"></i> <span class="nav-label">维修订单</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">订单审核</a>
+                    </li>
+                    <li>
+                        <a href="###">订单搜索</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="###"><i class="fa fa-list-alt"></i> <span class="nav-label">回收订单管理</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">订单审核</a>
+                    </li>
+                    <li>
+                        <a href="###">订单搜索</a>
+                    </li>
+                </ul>
+            </li>
+            <!--回收管理-->
+            <li>
+                <a href="###"><i class="fa fa-list-ul"></i> <span class="nav-label">售后</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">售后审核</a>
+                    </li>
+                    <li>
+                        <a href="###">售后管理</a>
+                    </li>
+                </ul>
+            </li>
+            <!--账单管理-->
+            <li>
+                <a href="###"><i class="fa fa-money"></i> <span class="nav-label">账单管理</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">账单查看</a>
+                    </li>
+                    <li>
+                        <a href="###">账单操作</a>
+                    </li>
+                    <li>
+                        <a href="###">马币消费记录管理</a>
+                    </li>
+                </ul>
+            </li>
+            <!--权限管理 -->
+            <li>
+                <a href="###"><i class="fa fa-users"></i> <span class="nav-label">权限管理</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">角色管理</a>
+                    </li>
+                    <li>
+                        <a href="###">角色权限配置</a>
+                    </li>
+                    <li>
+                        <a href="###">用户角色配置</a>
+                    </li>
+                </ul>
+            </li>
+            <!--消息管理-->
+            <li>
+                <a href="###"><i class="fa fa-info-circle"></i> <span class="nav-label">消息管理</span><span
+                        class="fa arrow"></span></a>
+            </li>
+            <!--基础数据管理-->
+            <li>
+                <a href="###"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">基础数据管理</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="###">备件基础数据</a>
+                    </li>
+                    <li>
+                        <a href="###">城市基础数据</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+</body>
+</html>

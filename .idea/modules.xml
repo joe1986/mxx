@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-admin/cloud-admin.iml" filepath="$PROJECT_DIR$/cloud-admin/cloud-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-api-app/cloud-api-app.iml" filepath="$PROJECT_DIR$/cloud-api-app/cloud-api-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-api-gateway/cloud-api-gateway.iml" filepath="$PROJECT_DIR$/cloud-api-gateway/cloud-api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-api-h5/cloud-api-h5.iml" filepath="$PROJECT_DIR$/cloud-api-h5/cloud-api-h5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-dao/cloud-dao.iml" filepath="$PROJECT_DIR$/cloud-dao/cloud-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-eureka-server/cloud-eureka-server.iml" filepath="$PROJECT_DIR$/cloud-eureka-server/cloud-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-service/cloud-service.iml" filepath="$PROJECT_DIR$/cloud-service/cloud-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-service-dto/cloud-service-dto.iml" filepath="$PROJECT_DIR$/cloud-service-dto/cloud-service-dto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-web/cloud-web.iml" filepath="$PROJECT_DIR$/cloud-web/cloud-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mxx.iml" filepath="$PROJECT_DIR$/mxx.iml" />
+    </modules>
+  </component>
+</project>

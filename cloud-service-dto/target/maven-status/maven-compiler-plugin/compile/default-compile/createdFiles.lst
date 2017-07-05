@@ -1,0 +1,3 @@
+com\hr\mxx\dto\BaseDto.class
+com\hr\mxx\dto\order\OrderDto.class
+com\hr\mxx\dto\user\UserDto.class

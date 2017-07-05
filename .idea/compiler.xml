@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-admin" />
+        <module name="cloud-api-app" />
+        <module name="cloud-api-gateway" />
+        <module name="cloud-api-h5" />
+        <module name="cloud-dao" />
+        <module name="cloud-enreka-server" />
+        <module name="cloud-eureka-server" />
+        <module name="cloud-service" />
+        <module name="cloud-service-dto" />
+        <module name="cloud-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-admin" target="1.8" />
+      <module name="cloud-api-app" target="1.8" />
+      <module name="cloud-api-gateway" target="1.8" />
+      <module name="cloud-api-h5" target="1.8" />
+      <module name="cloud-dao" target="1.5" />
+      <module name="cloud-enreka-server" target="1.8" />
+      <module name="cloud-eureka-server" target="1.8" />
+      <module name="cloud-service" target="1.8" />
+      <module name="cloud-service-dto" target="1.5" />
+      <module name="cloud-web" target="1.8" />
+      <module name="mxx" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

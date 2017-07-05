@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+
+	<body youdao="bind">
+		<div class="theme-config">
+			<div class="theme-config-box">
+				<div class="spin-icon">
+					<i class="fa fa-cogs fa-spin"></i>
+				</div>
+				<div class="skin-settings">
+					<div class="title">系统配置<br>
+						<small style="text-transform: none;font-weight: 400">
+                系统UI,主题，颜色设置<br/>
+                   系统UI,主题，颜色设置
+            </small></div>
+					<div class="setings-item">
+						<span>
+                        展开菜单
+                    </span>
+
+						<div class="switch">
+							<div class="onoffswitch">
+								<input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu">
+								<label class="onoffswitch-label" for="collapsemenu">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+							</div>
+						</div>
+					</div>
+					<div class="setings-item">
+						<span>
+                         固定边栏
+                    </span>
+
+						<div class="switch">
+							<div class="onoffswitch">
+								<input type="checkbox" name="fixedsidebar" class="onoffswitch-checkbox" id="fixedsidebar">
+								<label class="onoffswitch-label" for="fixedsidebar">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+							</div>
+						</div>
+					</div>
+					<div class="setings-item">
+						<span>
+                        顶部导航
+                    </span>
+
+						<div class="switch">
+							<div class="onoffswitch">
+								<input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox" id="fixednavbar">
+								<label class="onoffswitch-label" for="fixednavbar">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+							</div>
+						</div>
+					</div>
+					<div class="setings-item">
+						<span>
+                      顶部导航 v.2
+                        <br>
+                        <small>*基本布局</small>
+                    </span>
+
+						<div class="switch">
+							<div class="onoffswitch">
+								<input type="checkbox" name="fixednavbar2" class="onoffswitch-checkbox" id="fixednavbar2">
+								<label class="onoffswitch-label" for="fixednavbar2">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+							</div>
+						</div>
+					</div>
+					<div class="setings-item">
+						<span>
+                        传统布局
+                    </span>
+
+						<div class="switch">
+							<div class="onoffswitch">
+								<input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox" id="boxedlayout">
+								<label class="onoffswitch-label" for="boxedlayout">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+							</div>
+						</div>
+					</div>
+					<div class="setings-item">
+						<span>
+                          固定底部
+                    </span>
+
+						<div class="switch">
+							<div class="onoffswitch">
+								<input type="checkbox" name="fixedfooter" class="onoffswitch-checkbox" id="fixedfooter">
+								<label class="onoffswitch-label" for="fixedfooter">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+							</div>
+						</div>
+					</div>
+
+					<div class="title">颜色外观</div>
+					<div class="setings-item default-skin">
+						<span class="skin-name ">
+                         <a href="#" class="s-skin-0">
+                             默认颜色
+                         </a>
+                    </span>
+					</div>
+					<div class="setings-item blue-skin">
+						<span class="skin-name ">
+                        <a href="#" class="s-skin-1">
+                            亮蓝色
+                        </a>
+                    </span>
+					</div>
+					<div class="setings-item yellow-skin">
+						<span class="skin-name ">
+                        <a href="#" class="s-skin-3">
+                            黄色/紫色
+                        </a>
+                    </span>
+					</div>
+					<!--  <div class="setings-item ultra-skin">
+                    <span class="skin-name ">
+                        <a href="#" class="md-skin">
+                            材料设计 
+                        </a>
+                    </span>
+            </div>-->
+				</div>
+			</div>
+		</div>
+		<script>
+			// Config box
+
+			// Enable/disable fixed top navbar
+			$('#fixednavbar').click(function() {
+				if($('#fixednavbar').is(':checked')) {
+					$(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+					$("body").removeClass('boxed-layout');
+					$("body").addClass('fixed-nav');
+					$('#boxedlayout').prop('checked', false);
+
+					if(localStorageSupport) {
+						localStorage.setItem("boxedlayout", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar", 'on');
+					}
+				} else {
+					$(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
+					$("body").removeClass('fixed-nav');
+					$("body").removeClass('fixed-nav-basic');
+					$('#fixednavbar2').prop('checked', false);
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar2", 'off');
+					}
+				}
+			});
+
+			// Enable/disable fixed top navbar
+			$('#fixednavbar2').click(function() {
+				if($('#fixednavbar2').is(':checked')) {
+					$(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+					$("body").removeClass('boxed-layout');
+					$("body").addClass('fixed-nav').addClass('fixed-nav-basic');
+					$('#boxedlayout').prop('checked', false);
+
+					if(localStorageSupport) {
+						localStorage.setItem("boxedlayout", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar2", 'on');
+					}
+				} else {
+					$(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
+					$("body").removeClass('fixed-nav').removeClass('fixed-nav-basic');
+					$('#fixednavbar').prop('checked', false);
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar2", 'off');
+					}
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar", 'off');
+					}
+				}
+			});
+
+			// Enable/disable fixed sidebar
+			$('#fixedsidebar').click(function() {
+				if($('#fixedsidebar').is(':checked')) {
+					$("body").addClass('fixed-sidebar');
+					$('.sidebar-collapse').slimScroll({
+						height: '100%',
+						railOpacity: 0.9
+					});
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixedsidebar", 'on');
+					}
+				} else {
+					$('.sidebar-collapse').slimscroll({
+						destroy: true
+					});
+					$('.sidebar-collapse').attr('style', '');
+					$("body").removeClass('fixed-sidebar');
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixedsidebar", 'off');
+					}
+				}
+			});
+
+			// Enable/disable collapse menu
+			$('#collapsemenu').click(function() {
+				if($('#collapsemenu').is(':checked')) {
+					$("body").addClass('mini-navbar');
+					SmoothlyMenu();
+
+					if(localStorageSupport) {
+						localStorage.setItem("collapse_menu", 'on');
+					}
+
+				} else {
+					$("body").removeClass('mini-navbar');
+					SmoothlyMenu();
+
+					if(localStorageSupport) {
+						localStorage.setItem("collapse_menu", 'off');
+					}
+				}
+			});
+
+			// Enable/disable boxed layout
+			$('#boxedlayout').click(function() {
+				if($('#boxedlayout').is(':checked')) {
+					$("body").addClass('boxed-layout');
+					$('#fixednavbar').prop('checked', false);
+					$('#fixednavbar2').prop('checked', false);
+					$(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
+					$("body").removeClass('fixed-nav');
+					$("body").removeClass('fixed-nav-basic');
+					$(".footer").removeClass('fixed');
+					$('#fixedfooter').prop('checked', false);
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixednavbar2", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixedfooter", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("boxedlayout", 'on');
+					}
+				} else {
+					$("body").removeClass('boxed-layout');
+
+					if(localStorageSupport) {
+						localStorage.setItem("boxedlayout", 'off');
+					}
+				}
+			});
+
+			// Enable/disable fixed footer
+			$('#fixedfooter').click(function() {
+				if($('#fixedfooter').is(':checked')) {
+					$('#boxedlayout').prop('checked', false);
+					$("body").removeClass('boxed-layout');
+					$(".footer").addClass('fixed');
+
+					if(localStorageSupport) {
+						localStorage.setItem("boxedlayout", 'off');
+					}
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixedfooter", 'on');
+					}
+				} else {
+					$(".footer").removeClass('fixed');
+
+					if(localStorageSupport) {
+						localStorage.setItem("fixedfooter", 'off');
+					}
+				}
+			});
+
+			// SKIN Select
+			$('.spin-icon').click(function() {
+				$(".theme-config-box").toggleClass("show");
+			});
+
+			// Default skin
+			$('.s-skin-0').click(function() {
+				$("body").removeClass("skin-1");
+				$("body").removeClass("skin-2");
+				$("body").removeClass("skin-3");
+			});
+
+			// Blue skin
+			$('.s-skin-1').click(function() {
+				$("body").removeClass("skin-2");
+				$("body").removeClass("skin-3");
+				$("body").addClass("skin-1");
+			});
+
+			// Inspinia ultra skin
+			$('.s-skin-2').click(function() {
+				$("body").removeClass("skin-1");
+				$("body").removeClass("skin-3");
+				$("body").addClass("skin-2");
+			});
+
+			// Yellow skin
+			$('.s-skin-3').click(function() {
+				$("body").removeClass("skin-1");
+				$("body").removeClass("skin-2");
+				$("body").addClass("skin-3");
+			});
+
+			if(localStorageSupport) {
+				var collapse = localStorage.getItem("collapse_menu");
+				var fixedsidebar = localStorage.getItem("fixedsidebar");
+				var fixednavbar = localStorage.getItem("fixednavbar");
+				var fixednavbar2 = localStorage.getItem("fixednavbar2");
+				var boxedlayout = localStorage.getItem("boxedlayout");
+				var fixedfooter = localStorage.getItem("fixedfooter");
+
+				if(collapse == 'on') {
+					$('#collapsemenu').prop('checked', 'checked')
+				}
+				if(fixedsidebar == 'on') {
+					$('#fixedsidebar').prop('checked', 'checked')
+				}
+				if(fixednavbar == 'on') {
+					$('#fixednavbar').prop('checked', 'checked')
+				}
+				if(fixednavbar2 == 'on') {
+					$('#fixednavbar2').prop('checked', 'checked')
+				}
+				if(boxedlayout == 'on') {
+					$('#boxedlayout').prop('checked', 'checked')
+				}
+				if(fixedfooter == 'on') {
+					$('#fixedfooter').prop('checked', 'checked')
+				}
+			}
+
+			function SmoothlyMenu() {
+				if(!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
+					// Hide menu in order to smoothly turn on when maximize menu
+					$('#side-menu').hide();
+					// For smoothly turn on menu
+					setTimeout(
+						function() {
+							$('#side-menu').fadeIn(400);
+						}, 200);
+				} else if($('body').hasClass('fixed-sidebar')) {
+					$('#side-menu').hide();
+					setTimeout(
+						function() {
+							$('#side-menu').fadeIn(400);
+						}, 100);
+				} else {
+					// Remove all inline style from jquery fadeIn function to reset menu state
+					$('#side-menu').removeAttr('style');
+				}
+			}
+			// check if browser support HTML5 local storage
+			function localStorageSupport() {
+				return(('localStorage' in window) && window['localStorage'] !== null)
+			}
+		</script>
+		<div id="cntvlive2-is-installed"></div>
+		<audio controls="controls" style="display: none;"></audio>
+	</body>
+	<style type="text/css">
+		#yddContainer {
+			display: block;
+			font-family: Microsoft YaHei;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			top: -4px;
+			left: -4px;
+			font-size: 12px;
+			border: 1px solid
+		}
+		
+		#yddTop {
+			display: block;
+			height: 22px
+		}
+		
+		#yddTopBorderlr {
+			display: block;
+			position: static;
+			height: 17px;
+			padding: 2px 28px;
+			line-height: 17px;
+			font-size: 12px;
+			color: #5079bb;
+			font-weight: bold;
+			border-style: none solid;
+			border-width: 1px
+		}
+		
+		#yddTopBorderlr .ydd-sp {
+			position: absolute;
+			top: 2px;
+			height: 0;
+			overflow: hidden
+		}
+		
+		.ydd-icon {
+			left: 5px;
+			width: 17px;
+			padding: 0px 0px 0px 0px;
+			padding-top: 17px;
+			background-position: -16px -44px
+		}
+		
+		.ydd-close {
+			right: 5px;
+			width: 16px;
+			padding-top: 16px;
+			background-position: left -44px
+		}
+		
+		#yddKeyTitle {
+			float: left;
+			text-decoration: none
+		}
+		
+		#yddMiddle {
+			display: block;
+			margin-bottom: 10px
+		}
+		
+		.ydd-tabs {
+			display: block;
+			margin: 5px 0;
+			padding: 0 5px;
+			height: 18px;
+			border-bottom: 1px solid
+		}
+		
+		.ydd-tab {
+			display: block;
+			float: left;
+			height: 18px;
+			margin: 0 5px -1px 0;
+			padding: 0 4px;
+			line-height: 18px;
+			border: 1px solid;
+			border-bottom: none
+		}
+		
+		.ydd-trans-container {
+			display: block;
+			line-height: 160%
+		}
+		
+		.ydd-trans-container a {
+			text-decoration: none;
+		}
+		
+		#yddBottom {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 22px;
+			line-height: 22px;
+			overflow: hidden;
+			background-position: left -22px
+		}
+		
+		.ydd-padding010 {
+			padding: 0 10px
+		}
+		
+		#yddWrapper {
+			color: #252525;
+			z-index: 10001;
+			background: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);
+		}
+		
+		#yddContainer {
+			background: #fff;
+			border-color: #4b7598
+		}
+		
+		#yddTopBorderlr {
+			border-color: #f0f8fc
+		}
+		
+		#yddWrapper .ydd-sp {
+			background-image: url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)
+		}
+		
+		#yddWrapper a,
+		#yddWrapper a:hover,
+		#yddWrapper a:visited {
+			color: #50799b
+		}
+		
+		#yddWrapper .ydd-tabs {
+			color: #959595
+		}
+		
+		.ydd-tabs,
+		.ydd-tab {
+			background: #fff;
+			border-color: #d5e7f3
+		}
+		
+		#yddBottom {
+			color: #363636
+		}
+		
+		#yddWrapper {
+			min-width: 250px;
+			max-width: 400px;
+		}
+	</style>
+
+</html>
